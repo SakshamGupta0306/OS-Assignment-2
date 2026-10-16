@@ -1,0 +1,30 @@
+sudo taskset -c 0 chrt -r 20 ./program_a
+Involuntary Context Switches: 256
+Voluntary Context Switches: 8
+Average Response Time: 34.83ms
+Maximum Response Time: 69.70ms
+Average Turnaround Time: 2652.50ms
+Maximum Turnaround Time: 2681.75ms
+Throughput: 2.98 children/s
+Total Elapsed Time: 2.68s
+
+
+sudo timeout 30 taskset -c 0 chrt -f 20 ./program_a
+sudo timeout 30 taskset -c 0 chrt -f 20 ./program_b
+Involuntary Context Switches: 2
+Voluntary Context Switches: 8
+Average Response Time: 1177.73ms
+Maximum Response Time: 2362.95ms
+Average Turnaround Time: 1512.86ms
+Maximum Turnaround Time: 2682.38ms
+Throughput: 2.98 children/s
+Total Elapsed Time: 2.68s
+Involuntary Context Switches: 0
+Voluntary Context Switches: 316
+Average Response Time: 15.59ms
+Maximum Response Time: 30.62ms
+Average Turnaround Time: 102.08ms
+Maximum Turnaround Time: 107.82ms
+Throughput: 74.20 children/s
+Total Elapsed Time: 0.11s
+
